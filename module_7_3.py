@@ -73,10 +73,10 @@ class WordsFinder:
     def find(self, word):
         find_words = {}
         word = word.lower()
-        for file_names, all_words in self.get_all_words().items():
-            if word in all_words:
-                find_words[file_names] = all_words.index(word)
-        return find_words
+        for file_names, words in self.get_all_words().items():
+            if word in words:
+                find_words[file_names] = words.index(word.lower()) + 1
+            return find_words
 
     def count(self, word):
         count_words = {}
